@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url(homePage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: auto;
+    transition: background 0.3s ease;
+}
+
+.navbar{
+    width:100%;
+    margin: auto;
+    padding: 35px 35px;
+}
+
+.navbar h1{
+    text-shadow: 2px 1.5px gray;
+    font-family: "Nunito", serif;
+    color: white;
+    font-size: 35px;
+    text-decoration: overline underline;
+    text-underline-position: under;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Header */
+header.Diseaseform {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Form container */
+.form {
+    background-color: transparent;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px wheat;
+    border: 2px solid #A9A9A9;
+}
+
+/* Section titles */
+h2 {
+    font-size: 20px;
+    color: whitesmoke;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.section,
+.form-actions {
+    border-top: 3px solid white;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Form inputs and labels */
+label {
+    font-size: 14px;
+    color: whitesmoke;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: wheat;
+}
+
+.animalDetailsRow {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.row2 {
+    margin-left: 15%;
+}
+
+/* Radio buttons */
+.symptom-item {
+    margin-bottom: 12px;
+    display: flex;
+    color: whitesmoke;
+    gap: 30px;
+}
+
+.labelP {
+    width: 100%;
+    max-width: 200px;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.symptom-item label {
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.symptom-item input[type="radio"],
+.symptom-item label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Submit button */
+.form-actions {
+    display: flex;
+    justify-content: center;
+}
+
+#submit-btn{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    background: #009688;
+    border: 2px solid #009688;
+    color: white;
+    cursor: pointer;
+}
+#submit-btn:hover {
+    border: 2px solid #009688;
+    background: transparent;
+    color: #009688;
+}
+
+/*Popup window (Result)*/
+  .popup{
+    width: 400px;
+    background: white;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1); 
+    text-align: center;
+    padding: 0px 30px 30px;
+    color: #333;
+    box-shadow: 5px 5px #D8D8D8;
+    visibility: hidden;
+    transition: transform 0.4s,  top 0.4s;
+    z-index: 1001; 
+  }
+
+  .open-popup{
+    visibility: visible;
+    top: 150%;
+    transform: translate(-50%, -50%) scale(1); 
+  }
+
+  .popup h2{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+    color: #333;
+  }
+  .popup p{
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .popup button{
+    width: 300px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 10px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    background: #009688;
+    border: 2px solid #009688;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  button:hover {
+    border: 2px solid #009688;
+    background: transparent;
+    color: #009688;
+}
+
+/* Overlay for dimming the background */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    display: none;
+    z-index: 999; 
+}
+
+.overlay.show {
+    display: block;
+}

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Disease Checker</title>
+    <link rel="stylesheet" href="formStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&family=Nunito:wght@300;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>AnimalDiseaseNet</h1>
+    </div>
+    <div class="container">
+        <div class="form">
+            <header class="Diseaseform">
+                <h1>Disease Prediction Form</h1>
+            </header>
+            <form action="#" method="POST" id="disease-form">
+                <!-- Animal Details Section -->
+                <section class="section">
+                    <h2>Animal Details</h2>
+                    <label for="animalType">Animal Type</label>
+                    <select id="animalType" name="animalType" required>
+                        <option value="" disabled selected>Choose</option>
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Cow">Cow</option>
+                        <option value="Horse">Horse</option>
+                        <option value="Rabbit">Rabbit</option>
+                        <option value="Sheep">Sheep</option>
+                        <option value="Rabbit">Goat</option>
+                        <option value="Sheep">Pig</option>
+                    </select>
+
+                    <label for="animalBreed">Breed</label>
+                    <input id="animalBreed" type="text" name="animalBreed" placeholder="e.g., Siamese" required>
+
+                    <div class="animalDetailsRow">
+                        <div class="row1">
+                            <label for="animalAge">Age</label>
+                            <input id="animalAge" type="number" name="animalAge" min="0" required>
+
+                            <label for="animalGender">Gender</label>
+                            <select id="animalGender" name="gender" required>
+                                <option value="" disabled selected>Choose</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="row2">
+                            <label for="animalWeight">Weight (kg)</label>
+                            <input id="animalWeight" type="number" name="weight" step="0.1" required>
+
+                            <label for="Duration">Duration (in Day)</label>
+                            <input id="Duration" type="number" name="duration" step="1" required>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Symptom Details Section -->
+                <section class="section">
+                    <h2>Symptom Details</h2>
+                    <label for="symptom1">Symptom 1</label>
+                    <input id="symptom1" type="text" name="symptom1"
+                        placeholder="e.g., Vomiting, Coughing, Diarrhea, Lethargy" required>
+
+                    <label for="symptom2">Symptom 2</label>
+                    <input id="symptom2" type="text" name="symptom2"
+                        placeholder="e.g., Vomiting, Coughing, Diarrhea, Lethargy">
+
+                    <label for="symptom3">Symptom 3</label>
+                    <input id="symptom3" type="text" name="symptom3"
+                        placeholder="e.g., Vomiting, Coughing, Diarrhea, Lethargy">
+
+                    <label for="symptom4">Symptom 4</label>
+                    <input id="symptom4" type="text" name="symptom4"
+                        placeholder="e.g., Vomiting, Coughing, Diarrhea, Lethargy">
+                </section>
+
+                <!-- Additional Symptoms Section -->
+                <section class="section">
+                    <h2>Additional Symptoms</h2>
+                    <div class="symptom-item">
+                        <div class="labelP">
+                            <p>Appetite Loss</p>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="appetiteYes" name="appetiteLoss" value="Yes" required>
+                            <label for="appetiteYes">Yes</label>
+                            <input type="radio" id="appetiteNo" name="appetiteLoss" value="No">
+                            <label for="appetiteNo">No</label>
+                        </div>
+                    </div>
+
+                    <div class="symptom-item">
+                        <div class="labelP">
+                            <p>Vomiting</p>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="vomitingYes" name="vomiting" value="Yes" required>
+                            <label for="vomitingYes">Yes</label>
+                            <input type="radio" id="vomitingNo" name="vomiting" value="No">
+                            <label for="vomitingNo">No</label>
+                        </div>
+                    </div>
+
+                    <div class="symptom-item">
+                        <div class="labelP">
+                            <p>Diarrhea</p>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="diarrheaYes" name="diarrhea" value="Yes" required>
+                            <label for="diarrheaYes">Yes</label>
+                            <input type="radio" id="diarrheaNo" name="diarrhea" value="No">
+                            <label for="diarrheaNo">No</label>
+                        </div>
+                    </div>
+
+                    <div class="symptom-item">
+                        <div class="labelP">
+                            <p>Coughing</p>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="coughingYes" name="coughing" value="Yes" required>
+                            <label for="coughingYes">Yes</label>
+                            <input type="radio" id="coughingNo" name="coughing" value="No">
+                            <label for="coughingNo">No</label>
+                        </div>
+                    </div>
+
+                    <div class="symptom-item">
+                        <div class="labelP">
+                            <p>Labored Breathing</p>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="Labored_BreathingYes" name="Labored_Breathing" value="Yes" required>
+                            <label for="Labored_BreathingYes">Yes</label>
+                            <input type="radio" id="Labored_BreathingNo" name="Labored_Breathing" value="No">
+                            <label for="Labored_BreathingNo">No</label>
+                        </div>
+                    </div>
+
+                    <div class="symptom-item">
+                        <div class="labelP">
+                            <p>Lameness</p>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="lamenessYes" name="lameness" value="Yes" required>
+                            <label for="lamenessYes">Yes</label>
+                            <input type="radio" id="lamenessNo" name="lameness" value="No">
+                            <label for="lamenessNo">No</label>
+                        </div>
+                    </div>
+
+                    <div class="symptom-item">
+                        <div class="labelP">
+                            <p>Skin Lesions</p>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="Skin_LesionsYes" name="Skin_Lesions" value="Yes" required>
+                            <label for="Skin_LesionsYes">Yes</label>
+                            <input type="radio" id="Skin_LesionsNo" name="Skin_Lesions" value="No">
+                            <label for="Skin_LesionsNo">No</label>
+                        </div>
+                    </div>
+
+                    <div class="symptom-item">
+                        <div class="labelP">
+                            <p>Nasal Discharge</p>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="Nasal_DischargeYes" name="Nasal_Discharge" value="Yes" required>
+                            <label for="Nasal_DischargeYes">Yes</label>
+                            <input type="radio" id="Nasal_DischargeNo" name="Nasal_Discharge" value="No">
+                            <label for="Nasal_DischargeNo">No</label>
+                        </div>
+                    </div>
+
+                    <div class="symptom-item">
+                        <div class="labelP">
+                            <p>Eye Discharge</p>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="Eye_DischargeYes" name="Eye_Discharge" value="Yes" required>
+                            <label for="Eye_DischargeYes">Yes</label>
+                            <input type="radio" id="Eye_DischargeNo" name="Eye_Discharge" value="No">
+                            <label for="Eye_DischargeNo">No</label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Vital Signs Section -->
+                <section class="section">
+                    <h2>Vital Signs</h2>
+                    <label for="bodyTemp">Body Temperature (°C)</label>
+                    <input id="bodyTemp" type="number" name="bodyTemp" step="0.1" required>
+
+                    <label for="heartRate">Heart Rate (bpm)</label>
+                    <input id="heartRate" type="number" name="heartRate" required>
+                </section>
+
+                <!-- Algorithm Section -->
+                <section class="section">
+                    <h2>Algorithm Selection</h2>
+                    <select id="algorithmSelect" name="algorithmSelect" required>
+                        <option value="" disabled selected>Choose</option>
+                        <option value="lr">Logistic Regression</option>
+                        <option value="knn">K-Nearest Neighbors</option>
+                        <option value="nb">Naive Bayes</option>
+                        <option value="svm">Support Vector Machines (SVM)</option>
+                        <option value="rf">Random Forest</option>
+                        <option value="ann">Artificial Neural Networks (ANNs)</option>
+                        <option value="lda">Linear Discriminant Analysis (LDA)</option>
+                    </select>
+                </section>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="button" id="submit-btn" onclick="validateForm()">PREDICT DISEASE</button>
+
+                    <div class="popup" id="popup">
+                        <h2>Disease Predicted</h2><br>
+                        <p>The prediction result based on the selected algorithm is displayed below:</p><br>
+                        <p><strong>Disease Name:</strong> [Predicted Disease Name]</p>
+                        <button type="button" onclick="closePopup()">Choose Another Algorithm</button>
+                        <a href="home.html">
+                            <button type="button">Home</button>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Overlay for dimming the background -->
+    <div id="background-overlay" class="overlay"></div>
+
+
+    <script>
+        function validateForm() {
+            const heartRate = document.getElementById('heartRate').value;
+            const bodyTemp = document.getElementById('bodyTemp').value;
+            const weight = document.getElementById('animalWeight').value;
+            const age = document.getElementById('animalAge').value;
+
+            let valid = true;
+            let errorMessage = "";
+
+            if (heartRate <=0) {
+                valid = false;
+                errorMessage += "Heart rate must not less than 0 bpm.\n";
+            }
+
+            if (bodyTemp <= 0) {
+                valid = false;
+                errorMessage += "Body temperature must not be less than 0°C.\n";
+            }
+
+            if (weight <= 0) {
+                valid = false;
+                errorMessage += "Weight must be greater than 0.\n";
+            }
+
+            if (age < 0) {
+                valid = false;
+                errorMessage += "Age must be a positive number.\n";
+            }
+
+            if (!valid) {
+                alert(errorMessage);
+            } else {
+                openPopup();
+            }
+        }
+
+        function openPopup() {
+            let popup = document.getElementById("popup");
+            let overlay = document.getElementById("background-overlay");
+
+            popup.classList.add("open-popup");
+            overlay.classList.add("show");
+        }
+
+        function closePopup() {
+            let popup = document.getElementById("popup");
+            let overlay = document.getElementById("background-overlay");
+
+            popup.classList.remove("open-popup");
+            overlay.classList.remove("show");
+        }
+
+    </script>
+
+</body>
+
+</html>
