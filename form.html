@@ -11,6 +11,249 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&family=Nunito:wght@300;700&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url(homePage.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow: auto;
+            transition: background 0.3s ease;
+        }
+
+        .navbar {
+            width: 100%;
+            margin: auto;
+            padding: 35px 35px;
+        }
+
+        .navbar h1 {
+            text-shadow: 2px 1.5px gray;
+            font-family: "Nunito", serif;
+            color: white;
+            font-size: 35px;
+            text-decoration: overline underline;
+            text-underline-position: under;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        /* Header */
+        header.Diseaseform {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        /* Form container */
+        .form {
+            background-color: transparent;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px wheat;
+            border: 2px solid #A9A9A9;
+        }
+
+        /* Section titles */
+        h2 {
+            font-size: 20px;
+            color: whitesmoke;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+
+        .section,
+        .form-actions {
+            border-top: 3px solid white;
+            margin: 0;
+            padding: 10px;
+        }
+
+        /* Form inputs and labels */
+        label {
+            font-size: 14px;
+            color: whitesmoke;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: wheat;
+        }
+
+        .animalDetailsRow {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .row2 {
+            margin-left: 15%;
+        }
+
+        /* Radio buttons */
+        .symptom-item {
+            margin-bottom: 12px;
+            display: flex;
+            color: whitesmoke;
+            gap: 30px;
+        }
+
+        .labelP {
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .radio {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .symptom-item label {
+            font-size: 14px;
+            margin-right: 20px;
+        }
+
+        .symptom-item input[type="radio"],
+        .symptom-item label {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Submit button */
+        .form-actions {
+            display: flex;
+            justify-content: center;
+        }
+
+        #submit-btn {
+            width: 200px;
+            padding: 15px 0;
+            text-align: center;
+            margin: 20px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            background: #009688;
+            border: 2px solid #009688;
+            color: white;
+            cursor: pointer;
+        }
+
+        #submit-btn:hover {
+            border: 2px solid #009688;
+            background: transparent;
+            color: #009688;
+        }
+
+        /*Popup window (Result)*/
+        .popup {
+            width: 400px;
+            background: white;
+            border-radius: 8px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 0px 30px 30px;
+            color: #333;
+            box-shadow: 5px 5px #D8D8D8;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            z-index: 1001;
+        }
+
+        .open-popup {
+            visibility: visible;
+            top: 150%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .popup h2 {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 30px 0 10px;
+            color: #333;
+        }
+
+        .popup p {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .popup button {
+            width: 300px;
+            padding: 15px 0;
+            text-align: center;
+            margin: 10px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            background: #009688;
+            border: 2px solid #009688;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            border: 2px solid #009688;
+            background: transparent;
+            color: #009688;
+        }
+
+        /* Overlay for dimming the background */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -208,30 +451,16 @@
                     <input id="heartRate" type="number" name="heartRate" required>
                 </section>
 
-                <!-- Algorithm Section -->
-                <section class="section">
-                    <h2>Algorithm Selection</h2>
-                    <select id="algorithmSelect" name="algorithmSelect" required>
-                        <option value="" disabled selected>Choose</option>
-                        <option value="lr">Logistic Regression</option>
-                        <option value="knn">K-Nearest Neighbors</option>
-                        <option value="nb">Naive Bayes</option>
-                        <option value="svm">Support Vector Machines (SVM)</option>
-                        <option value="rf">Random Forest</option>
-                        <option value="ann">Artificial Neural Networks (ANNs)</option>
-                        <option value="lda">Linear Discriminant Analysis (LDA)</option>
-                    </select>
-                </section>
 
                 <!-- Submit Button -->
                 <div class="form-actions">
-                    <button type="button" id="submit-btn" onclick="validateForm()">PREDICT DISEASE</button>
+                    <button type="submit" id="submit-btn">PREDICT DISEASE</button>
 
                     <div class="popup" id="popup">
                         <h2>Disease Predicted</h2><br>
-                        <p>The prediction result based on the selected algorithm is displayed below:</p><br>
-                        <p><strong>Disease Name:</strong> [Predicted Disease Name]</p>
-                        <button type="button" onclick="closePopup()">Choose Another Algorithm</button>
+                        <p>The prediction result is displayed below:</p><br>
+                        <p><strong>Disease Name:</strong> <span id="popup-disease-name"></span></p>
+                        <button type="button" onclick="closePopup()">Ok</button>
                         <a href="home.html">
                             <button type="button">Home</button>
                         </a>
@@ -245,8 +474,57 @@
     <!-- Overlay for dimming the background -->
     <div id="background-overlay" class="overlay"></div>
 
-
     <script>
+        document.getElementById("disease-form").addEventListener("submit", async (event) => {
+            event.preventDefault(); // Prevent form from refreshing the page
+
+            // Validate the form before proceeding
+            if (!validateForm()) {
+                return;
+            }
+
+            // Collect form data
+            const formData = new FormData(event.target);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            console.log("Form data: ", data); // Debugging line to check the collected form data
+
+            try {
+                // Send data to Flask API
+                const response = await fetch("http://127.0.0.1:5000/predict", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to fetch prediction. Please try again.");
+                }
+
+                // Get prediction result
+                const result = await response.json();
+                console.log("Prediction result: ", result); // Debugging line to check the response
+
+                // Display the popup with the prediction result
+                document.getElementById("popup-disease-name").textContent = result.disease_name;
+                document.getElementById("popup").style.display = "block";
+                document.getElementById("background-overlay").style.display = "block";
+            } catch (error) {
+                alert(error.message); // Show error if fetching the prediction fails
+            }
+        });
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("background-overlay").style.display = "none";
+        }
+
         function validateForm() {
             const heartRate = document.getElementById('heartRate').value;
             const bodyTemp = document.getElementById('bodyTemp').value;
@@ -256,9 +534,9 @@
             let valid = true;
             let errorMessage = "";
 
-            if (heartRate <=0) {
+            if (heartRate <= 0) {
                 valid = false;
-                errorMessage += "Heart rate must not less than 0 bpm.\n";
+                errorMessage += "Heart rate must not be less than 0 bpm.\n";
             }
 
             if (bodyTemp <= 0) {
@@ -277,10 +555,10 @@
             }
 
             if (!valid) {
-                alert(errorMessage);
-            } else {
-                openPopup();
+                alert(errorMessage); // Show validation error messages
             }
+
+            return valid; // Return whether the form is valid
         }
 
         function openPopup() {
@@ -290,16 +568,8 @@
             popup.classList.add("open-popup");
             overlay.classList.add("show");
         }
-
-        function closePopup() {
-            let popup = document.getElementById("popup");
-            let overlay = document.getElementById("background-overlay");
-
-            popup.classList.remove("open-popup");
-            overlay.classList.remove("show");
-        }
-
     </script>
+
 
 </body>
 
